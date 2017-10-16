@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto Final</title>
+    <link rel="stylesheet" href="stylesheets/css/main.min.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="navbar-brand">
+            <img src="images/logo.png" alt="Logo" class="navbar-brand-bg">
+        </div>
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a href="#" class="nav-link dashboard active">
+                    <i class="nav-icon"></i> Dashboard
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link messages">
+                    <span class="notifications">2</span>
+                    <i class="nav-icon"></i> Messages
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link analytics">
+                    <i class="nav-icon"></i> Analytics
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link seetings">
+                    <i class="nav-icon"></i> Seetings
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <header class="header">
+        <button class="navbar-toggler closed"></button>
+        <ul class="navbar-nav">
+            <li class="profile">
+                <span class="profile-picture">
+				</span> John Doe
+                <i class="dropdown-indicator"></i>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+					Sing Out
+				</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+					Support
+				</a>
+            </li>
+        </ul>
+    </header>
+    <main class="main">
+        <article class="card">
+            <div class="card-header">
+                <h3 class="card-title">
+                    Visitors:
+                </h3>
+                <select class="select">
+                    <option>Days</option>
+					<option>Weeks</option>
+					<option>Months</option>
+				</select>
+            </div>
+            <div class="card-block">
+                <img src="images/graph-visitors.png" alt="Visitantes">
+            </div>
+        </article>
+        <article class="card">
+            <div class="card-header">
+                <h3 class="card-title">
+                    Subscriptions:
+                </h3>
+                <select class="select">
+            <option>Months</option>
+            <option>Weeks</option>
+            <option>Days</option>
+        </select>
+            </div>
+            <div class="card-block">
+                <img src="images/graph-subscriptions.png" alt="Visitantes">
+            </div>
+        </article>
+        <article class="card">
+            <div class="card-header">
+                <h3 class="card-title">
+                    Messages:
+                </h3>
+                <div class="buttons-wrapper">
+                    <button class="btn-messages down disabled"></button>
+                    <button class="btn-messages up"></button>
+                </div>
+            </div>
+            <div class="card-block">
+                <ul class="message-timeline">
+                    <li class="message">
+                        <div class="profile-container">
+                            <span class="picture"></span>
+                        </div>
+                        <div class="message-body">
+                            <p class="message-title">
+                                Jane Doe
+                                <i class="manage"></i>
+                            </p>
+                            <p class="message-content">
+                                Praesent in mauris eu tortor porttitor accumsan. Mauris suscipit, ligula sit amet pharetra semper, nibh ante cursus purus, vel sagittis...
+                            </p>
+                        </div>
+                    </li>
+                    <li class="message">
+                        <div class="profile-container">
+                            <span class="picture"></span>
+                        </div>
+                        <div class="message-body">
+                            <p class="message-title">
+                                John Doe
+                                <i class="manage"></i>
+                            </p>
+                            <p class="message-content">
+                                Morbi a metus. Phasellus enim erat, vestibulum vel, aliquam a, posuere eu, velit. Nullam sapien sem, ornare ac, nonummy non...
+                            </p>
+                        </div>
+                    </li>
+                    <li class="message">
+                        <div class="profile-container">
+                            <span class="picture"></span>
+                        </div>
+                        <div class="message-body">
+                            <p class="message-title">
+                                Alex Doe
+                                <i class="manage"></i>
+                            </p>
+                            <p class="message-content">
+                                Nam quis nulla. Integer malesuada. In in enim a arcu imperdiet malesuada. Sed vel lectus. Donec odio urna, tempus molestie...
+                            </p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </article>
+        <article class="card">
+            <div class="card-header">
+                <h3 class="card-title">
+                    Overview:
+                </h3>
+            </div>
+            <div class="card-block">
+                <img src="images/grpah-overview.png" alt="Visitantes">
+            </div>
+        </article>
+    </main>
+    <script src="./scripts/libAll.min.js"></script>
+    <script src="./scripts/appAll.min.js" async defer></script>
+</body>
+
+</html>

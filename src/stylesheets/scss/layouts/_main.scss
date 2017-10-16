@@ -1,0 +1,141 @@
+body {
+    background-color: $body-bg-color;
+}
+
+.main {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 8rem 0 0 0;
+    @media(min-width: 767px) {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    @media(min-width: 993px) {
+        padding: 10rem 0 0 12rem;
+        height: auto;
+    }
+    .card {
+        .card-header {
+            .select {
+                padding: 0.25rem 0.5rem;
+                >option {
+                    color: $logo-bg-color;
+                    font-size: 1em;
+                }
+            }
+            .buttons-wrapper {
+                .btn-messages {
+                    padding: 0.5rem 0.5rem;
+                    &.disabled {
+                        border: 1px solid rgba($navbar-text-color, 0.3);
+                        color: rgba($navbar-text-color, 0.3);
+                        cursor: not-allowed;
+                        &:hover {
+                            border: 1px solid rgba($navbar-text-color, 0.15);
+                            color: rgba($navbar-text-color, 0.15);
+                            box-shadow: none;
+                        }
+                    }
+                    &.up {
+                        @extend %up-indicator;
+                    }
+                    &.down {
+                        @extend %down-indicator;
+                    }
+                    &.up,
+                    &.down {
+                        &::after {
+                            transform: scale(3);
+                        }
+                    }
+                    &:active {
+                        background-color: rgba($navbar-text-color, 0.2);
+                        box-shadow: 0px 2px 4px rgba($navbar-text-color, 0.4);
+                    }
+                }
+            }
+            .select,
+            .buttons-wrapper .btn-messages {
+                @include button-theme($navbar-text-color);
+            }
+        }
+        .card-block {
+            >img {
+                height: auto;
+                max-height: 90%;
+                max-width: 90%;
+                width: auto;
+            }
+            .message-timeline {
+                .message {
+                    align-items: flex-start;
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: nowrap;
+                    justify-content: space-between;
+                    .profile-container {
+                        align-items: center;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        height: 100%;
+                        margin-right: 0.5rem;
+                        .picture {
+                            background-color: $body-bg-color;
+                            border: 5px solid #ffffff;
+                            border-radius: 50%;
+                            display: block;
+                            height: 4.5rem;
+                            width: 4.5rem;
+                            z-index: 2;
+                        }
+                    }
+                    &:nth-child(1) {
+                        .profile-container .picture::after {
+                            background-color: $body-bg-color;
+                            content: '';
+                            display: block;
+                            width: 0.1rem;
+                            height: 22rem;
+                            margin: 0 auto;
+                            z-index: 1;
+                            @media(min-width: 1200px) {
+                                height: 14rem;
+                            }
+                        }
+                    }
+                    .message-body {
+                        >p {
+                            color: rgba($navbar-text-color, 1);
+                        }
+                        .message-title {
+                            font-family: roboto-md;
+                            font-size: 1.3rem;
+                            .manage {
+                                @extend %seetings;
+                                margin-left: 0.5rem;
+                                color: rgba($navbar-text-color, 0.6);
+                                cursor: pointer;
+                                &::before {
+                                    font-size: 1.2rem;
+                                }
+                                &:hover {
+                                    transition: 0.3s all ease;
+                                    transform: rotate(360deg);
+                                    color: rgba($navbar-text-color, 0.9);
+                                }
+                            }
+                        }
+                        .message-content {
+                            font-family: roboto;
+                            font-size: 1.2rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,44 @@
+%dropdown-icon {
+    @extend .fa;
+    @extend .fa-caret-down;
+}
+
+%home {
+    @extend .fa;
+    @extend .fa-home;
+}
+
+%messages {
+    @extend .fa;
+    @extend .fa-envelope;
+}
+
+%analytics {
+    @extend .fa;
+    @extend .fa-line-chart;
+}
+
+%seetings {
+    @extend .fa;
+    @extend .fa-cog;
+}
+
+%up-indicator {
+    @extend .fa;
+    @extend .fa-chevron-up;
+}
+
+%down-indicator {
+    @extend .fa;
+    @extend .fa-chevron-down;
+}
+
+%menu-indicator {
+    @extend .fa;
+    @extend .fa-bars;
+}
+
+%close-indicator {
+    @extend .fa;
+    @extend .fa-times;
+}

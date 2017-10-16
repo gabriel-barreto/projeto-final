@@ -1,0 +1,5 @@
+node_modules
+dist
+layout.png
+cores.txt
+yarn.lock

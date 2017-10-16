@@ -1,0 +1,126 @@
+.opened {
+    height: 100vh;
+    overflow-y: hidden;
+    &::after {
+        background-color: rgba(#000000, 0.6);
+        bottom: 0;
+        content: '';
+        display: block;
+        position: absolute;
+        left: 0;
+        height: 100vh;
+        top: 0;
+        right: 0;
+        width: 100vw;
+        z-index: 99;
+    }
+    .navbar {
+        left: 0;
+    }
+}
+
+.navbar {
+    background-color: $bar-bg-color;
+    color: $bar-text-color;
+    height: 100vh;
+    left: -12rem;
+    padding: 0;
+    position: fixed;
+    top: 0;
+    transition: 0.2s all linear;
+    z-index: 999;
+    width: 10rem;
+    @media(min-width: 993px) {
+        left: 0;
+    }
+    .navbar-brand {
+        align-items: center;
+        background-color: $logo-bg-color;
+        display: flex;
+        justify-content: center;
+        height: 8rem;
+        width: 100%;
+        .navbar-brand-bg {
+            height: auto;
+            max-height: 75%;
+            max-width: 75%;
+            width: auto;
+        }
+    }
+    .navbar-nav {
+        .nav-item {
+            .nav-link {
+                align-items: center;
+                border-bottom: 1px solid $logo-bg-color;
+                color: $navbar-text-color;
+                display: flex;
+                flex-direction: column;
+                font-family: roboto-md;
+                font-size: 1.3rem;
+                padding: 2.25rem 0;
+                position: relative;
+                text-align: center;
+                transition: 0.4s all linear;
+                &.active {
+                    background-color: $logo-bg-color;
+                    color: #ffffff;
+                    &::after {
+                        color: $body-bg-color;
+                        content: '\f0d9';
+                        transform: scale(2);
+                        position: absolute;
+                        left: 95%;
+                        top: 50%;
+                    }
+                }
+                &.dashboard {
+                    border-left: 3px solid $dashboard-tab-color;
+                    .nav-icon {
+                        @extend %home;
+                    }
+                }
+                &.messages {
+                    border-left: 3px solid $messages-tab-color;
+                    .nav-icon {
+                        @extend %messages;
+                    }
+                }
+                &.analytics {
+                    border-left: 3px solid $analytics-tab-color;
+                    .nav-icon {
+                        @extend %analytics;
+                    }
+                }
+                &.seetings {
+                    border-left: 3px solid $seetings-tab-color;
+                    .nav-icon {
+                        @extend %seetings;
+                    }
+                }
+                &:hover {
+                    background-color: $logo-bg-color;
+                }
+                .notifications {
+                    align-items: center;
+                    display: flex;
+                    justify-content: center;
+                    background-color: $seetings-tab-color;
+                    color: $bar-text-color;
+                    border-radius: 50%;
+                    font-size: 1.25rem;
+                    height: 2em;
+                    position: absolute;
+                    top: 2rem;
+                    left: 2rem;
+                    width: 2em;
+                }
+                .nav-icon {
+                    margin-bottom: .5rem;
+                    &::before {
+                        font-size: 3.6rem;
+                    }
+                }
+            }
+        }
+    }
+}
