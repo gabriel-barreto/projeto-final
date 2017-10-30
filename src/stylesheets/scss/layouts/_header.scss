@@ -22,7 +22,6 @@
             }
             .navbar-toggler {
                 @include button-theme($bar-text-color);
-                @extend %menu-indicator;
                 align-self: center;
                 padding: .5rem 1rem;
                 @media (min-width: 993px) {
