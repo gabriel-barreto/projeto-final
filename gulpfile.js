@@ -31,7 +31,7 @@ let vendorScripts = [
 ];
 
 let fonts = [
-    'src/stylesheets/fonts/Roboto/*.*'
+    'src/stylesheets/fonts/Roboto/**'
 ];
 
 let icons = [];
@@ -123,7 +123,7 @@ gulp.task('uglify:app', ['clean:appjs'], function() {
         .pipe(concat('appAll.min.js'))
         .pipe(uglify({ mangle: false }))
         .pipe(minify({ ext: '.js', mangle: false }))
-        .pipe(gulp.dest('./dist/scripts/'))
+        .pipe(gulp.dest('./dist/scripts'))
         .pipe(browserSync.stream());
 });
 
@@ -132,7 +132,7 @@ gulp.task('uglify:lib', ['clean:libjs'], function() {
         .pipe(concat('libAll.min.js'))
         .pipe(uglify({ mangle: false }))
         .pipe(minify({ ext: '.js', mangle: false }))
-        .pipe(gulp.dest('./dist/scripts/'))
+        .pipe(gulp.dest('./dist/scripts'))
         .pipe(browserSync.stream());
 });
 
@@ -188,7 +188,7 @@ gulp.task('server', function() {
 gulp.task('copy:fonts', function() {
     gulp.src(fonts).pipe(copy('./dist', { prefix: 1 }));
     //gulp.src('node_modules/font-awesome/fonts/*.*').pipe(copy('./dist/stylesheets/fonts', { prefix: 3 }));
-    gulp.src('src/assets/font-awesome/fonts/*.*').pipe(copy('./dist/stylesheets/fonts', { prefix: 3 }));
+    gulp.src('src/assets/font-awesome/fonts/**').pipe(copy('./dist/stylesheets', { prefix: 3 }));
 });
 
 gulp.task('copy:icons', function() {
@@ -196,12 +196,12 @@ gulp.task('copy:icons', function() {
 });
 
 gulp.task('copy:images', function() {
-    gulp.src('./src/images/**/*.*').pipe(copy('./dist', { prefix: 1 }));
+    gulp.src('./src/images/**').pipe(copy('./dist', { prefix: 1 }));
 });
 
 // ================================================= 
 
-gulp.task('default', ['copy:fonts', 'copy:icons', 'uglify:lib', 'compress:index', 'compress:views', 'sass', 'uglify:app'], function() {
+gulp.task('default', ['copy:fonts', 'copy:images', 'copy:icons', 'uglify:lib', 'compress:index', 'compress:views', 'sass', 'uglify:app'], function() {
     gulp.watch('./src/index.html', ['compress:index']);
     gulp.watch('./src/views/**/*.html', ['compress:views']);
     gulp.watch('./src/stylesheets/scss/**/*.*', ['sass']);
